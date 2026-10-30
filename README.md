@@ -6,37 +6,25 @@ I tested Jev the way I would use it as a community manager at TypeSafe: sorting 
 
 I ran these requests with Claude Code, an AI agent. I chose the questions and the data, and I read and labelled the results. The real messages come from a private working Discord that I run. This page shows counts only and no message text.
 
-Test 3, the main one
+# Test 3, the main one
 
 ## 965 real Discord messages
 
 The source is my build team's Discord: four people, July to October 2026. It is a working channel, not a support community, so it is messier and ruder than a typical product Discord. Each message went in alone with five questions: an 8-way category Choice that includes `unclear`, three Nouls (blocked, frustrated, needs a reply), and a 4-level urgency Score. No request failed.
-
-**965**messages triaged
-
-**0.79**median category confidence
-
-**5 / 150**category flips when options were reversed
-
-**0.006**average drift on the "blocked" Noul, same test
+- **965**messages triaged
+- **0.79**median category confidence
+- **5 / 150**category flips when options were reversed
+- **0.006**average drift on the "blocked" Noul, same test
 
 ### How the messages sorted
-
-Decision or steer201
-
-Status update179
-
-Unclear170
-
-Acknowledgement168
-
-Question115
-
-Complaint or correction77
-
-Task request49
-
-Bug report6
+- Decision or steer - 201 - these are particularly interesting, as I would next measure the number that went upstream to our company's local AI inference system (via a Discord webhook/bot)
+- Status update - 179
+- Unclear - 170
+- Acknowledgement - 168
+- Question - 115
+- Complaint or correction - 77
+- Task request - 49
+- Bug report - 6
 
 In my hand-labelled sample, the unclear messages were reaction GIFs and fragments, which need no action.
 
@@ -44,7 +32,7 @@ In my hand-labelled sample, the unclear messages were reaction GIFs and fragment
 
 I hand-labelled a random 36 messages. Three had too little context for me to judge. Of the other 33, 22 were clearly right and 11 were arguable. None were badly wrong.
 
-Confidence 0.65 or higher18/20
+Confidence 0.65 or higher - 18/20
 
 Confidence under 0.654/13
 
@@ -57,7 +45,7 @@ My labels are subjective and the sample is small. Treat it as a signal that the 
 - **Replies need the thread.** I sent each message alone, so "Yeah, same." scored poorly. The next version sends the previous one or two turns as state.
 - **Option order can move confidence.** Five of 150 reversed pairs changed category, and all five had first-run confidence of 0.5 or lower.
 
-Test 1
+# Test 1
 
 ## 14 synthetic community messages
 
@@ -70,7 +58,7 @@ A first pass with invented messages: a bug report with a payload, a feature requ
 - A single label loses a message with two intents. One Noul per intent keeps both.
 - My 3-level urgency scale was too vague. Confidence on several answers was near zero until the levels become descriptive.
 
-Test 2
+# Test 2
 
 ## Using Jev to fact-check my own cover letter
 
@@ -85,7 +73,7 @@ State: my verified work history. Twelve claims, one Noul each: "does the text su
 
 It caught the same two overclaims I had caught by hand, and I fixed both before sending. That is the use I would hand to a community team: a cheap check that a post says only what its source supports.
 
-What I would build
+# What I would build
 
 ## A confidence-routed triage layer for the TypeSafe community
 
@@ -95,7 +83,7 @@ What I would build
 - Send the previous turns of a thread as state, since short replies are unreadable alone.
 - Feed the recurring "blocked" themes into a weekly digest for the engineers, so the product feedback loop closes.
 
-A note for the docs
+# A note for the docs
 
 ## The jaggedness page is one version behind
 
